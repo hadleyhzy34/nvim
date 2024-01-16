@@ -1,11 +1,12 @@
 # my neovim config
 
+this repository is not just what i configured for my neovim setup learned after reviewing great `neovim` setup tutorial by [Elijah Manor](https://www.youtube.com/watch?v=N93cTbtLCIM&ab_channel=ElijahManor), [devaslife](https://www.youtube.com/watch?v=fFHlfbKVi30&ab_channel=devaslife), [theprimeagen](https://www.youtube.com/watch?v=fFHlfbKVi30&ab_channel=devaslife), [Dreams of Code](https://www.youtube.com/watch?v=4BnVeOUeZxc&ab_channel=DreamsofCode), but also a note to remember basic usage how to use power of `neovim` editor
+
 ## Table of Contents
 
 1. [Installation](#Installation)
 2. [Setup](#setup)
-
-this repository is not just what i configured for my neovim setup learned after reviewing great `neovim` setup tutorial by [Elijah Manor](https://www.youtube.com/watch?v=N93cTbtLCIM&ab_channel=ElijahManor), [devaslife](https://www.youtube.com/watch?v=fFHlfbKVi30&ab_channel=devaslife), [theprimeagen](https://www.youtube.com/watch?v=fFHlfbKVi30&ab_channel=devaslife), [Dreams of Code](https://www.youtube.com/watch?v=4BnVeOUeZxc&ab_channel=DreamsofCode), but also a note to remember basic usage how to use power of `neovim` editor
+   a. [setup colorscheme] (#setup colorscheme)
 
 ## Installation
 
@@ -360,8 +361,6 @@ usage: `leader` + `s` + `r`
 
 confirm it by pressing `leader` + `R`
 
-### surround.nvim
-
 ### issue: pyright, import [module] could not be resolved
 
 ```bash
@@ -413,9 +412,9 @@ return {
 }
 ```
 
-[Link: mini.surround](https://github.com/echasnovski/mini.surround)
-[source](https://github.com/kylechui/nvim-surround)
-[Link: nvim-surround](https://www.youtube.com/watch?v=96FS45IaUgo&ab_channel=NerdSignals)
+- [Link: mini.surround](https://github.com/echasnovski/mini.surround)
+- [source](https://github.com/kylechui/nvim-surround)
+- [Link: nvim-surround](https://www.youtube.com/watch?v=96FS45IaUgo&ab_channel=NerdSignals)
 
 ### symbols outline
 
@@ -444,7 +443,7 @@ To make these commands use a vertical split:
 :vert diffpatch /tmp/diff
 ```
 
-[Reference](https://neovim.io/doc/user/diff.html)'
+[Reference](https://neovim.io/doc/user/diff.html)
 
 ## Reference
 
