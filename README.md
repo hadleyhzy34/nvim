@@ -1,10 +1,8 @@
 # my neovim config
 
-this repository is not just what i configured for my neovim setup learned after reviewing perfect `neovim` setup by [Elijah Manor](https://www.youtube.com/watch?v=N93cTbtLCIM&ab_channel=ElijahManor), [devaslife](https://www.youtube.com/watch?v=fFHlfbKVi30&ab_channel=devaslife), [theprimeagen](https://www.youtube.com/watch?v=fFHlfbKVi30&ab_channel=devaslife), [Dreams of Code](https://www.youtube.com/watch?v=4BnVeOUeZxc&ab_channel=DreamsofCode), but also a note to remember basic usage how to use power of `neovim editor
+this repository is not just what i configured for my neovim setup learned after reviewing great `neovim` setup tutorial by [Elijah Manor](https://www.youtube.com/watch?v=N93cTbtLCIM&ab_channel=ElijahManor), [devaslife](https://www.youtube.com/watch?v=fFHlfbKVi30&ab_channel=devaslife), [theprimeagen](https://www.youtube.com/watch?v=fFHlfbKVi30&ab_channel=devaslife), [Dreams of Code](https://www.youtube.com/watch?v=4BnVeOUeZxc&ab_channel=DreamsofCode), but also a note to remember basic usage how to use power of `neovim` editor
 
 ## Installation
-
----
 
 - Clone the starter
   ```
@@ -23,8 +21,6 @@ this repository is not just what i configured for my neovim setup learned after 
 [link](https://www.lazyvim.org/installation)
 
 ### install `fd` and `ripgrep`
-
----
 
 #### mac OS
 
@@ -47,11 +43,7 @@ type `leader` + `leader`:
 
 ## setup
 
----
-
 ### setup colorscheme
-
----
 
 #### default colorscheme
 
@@ -107,8 +99,6 @@ same config setting for colorscheme Dracula:
 
 ### key maps
 
----
-
 #### increment and decrement number
 
 move cursor to number, press `Ctrl` + `a` or `x` to increase or decrease number by 1:
@@ -133,8 +123,6 @@ switch between tabs by going to next tab or go back to previous tab:
 `<tab>` or `<s-tab>`
 
 ### windows control
-
----
 
 #### resize windows
 
@@ -166,8 +154,6 @@ keymap.set("n", "sv", ":vsplit<Return>", opts)
 
 ### undercurl
 
----
-
 ![neovim-undercurl](./public/neovim-undercurl.png)
 
 ```lua
@@ -177,8 +163,6 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 ```
 
 ### installing extras
-
----
 
 `lazy.lua`
 
@@ -193,15 +177,11 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 #### hovering documentation
 
----
-
 `shift` + `k`:
 
 ![neovim-hover](./public/neovim-hover.png)
 
 #### noice setup
-
----
 
 ```lua
   {
@@ -260,8 +240,6 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 #### notification
 
----
-
 ```lua
 {
 	"rcarriga/nvim-notify",
@@ -273,9 +251,7 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 #### rename
 
----
-
-[neovim-rename](./public/neovim-rename.png)
+![neovim-rename](./public/neovim-rename.png)
 
 `IncRename` provides way renaming variables with preview features
 
@@ -299,8 +275,6 @@ go to file `lua/config/ui.lua` and setup:
 [link](https://github.com/smjonas/inc-rename.nvim)
 
 #### filename
-
----
 
 ![neovim-filename](./public/neovim-filename.png)
 
@@ -342,8 +316,6 @@ add follow to file `ui.lua`:
 
 ### personal logo
 
----
-
 add follow to file `ui.lua`:
 
 ```lua
@@ -368,8 +340,6 @@ add follow to file `ui.lua`:
 
 ### TODO handling
 
----
-
 a. first type uppercase `todo`:
 ![[neovim-todo.png]]
 
@@ -378,16 +348,12 @@ and all `todo` task will be shown
 
 ### search and replace
 
----
-
 usage: `leader` + `s` + `r`
 ![[neovim-sr.png]]
 
 confirm it by pressing `leader` + `R`
 
 ### issue: pyright, import [module] could not be resolved
-
----
 
 ```bash
 ├── manage.py
@@ -418,8 +384,6 @@ include = ["movie", "moviereviews"]
 
 ## Diff
 
----
-
 ### horizontal split
 
 open a new window on the file {filename}.
@@ -435,11 +399,9 @@ To make these commands use a vertical split:
 :vert diffpatch /tmp/diff
 ```
 
-[Reference](https://neovim.io/doc/user/diff.html)
+[Reference](https://neovim.io/doc/user/diff.html)'
 
 ## Reference
-
----
 
 - [Zero to IDE with LazyVim](https://www.youtube.com/watch?v=N93cTbtLCIM)
 - [Effective Neovim setup for web development towards 2024](https://github.com/craftzdog/dotfiles-public)
