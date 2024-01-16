@@ -45,7 +45,7 @@ sudo apt-get install ripgrep
 ### usage
 
 type `leader` + `leader`:
-![[neovim-fd.png]]
+![[public/neovim-fd.png]]
 
 # setup
 
@@ -403,7 +403,7 @@ include = ["movie", "moviereviews"]
 
 ---
 
-[Zero to IDE with LazyVim](https://www.youtube.com/watch?v=N93cTbtLCIM)
-[Effective Neovim setup for web development towards 2024](https://github.com/craftzdog/dotfiles-public)
-[Neovim Installation](https://www.lazyvim.org/installation)
-[The perfect Neovim setup for Python](https://www.youtube.com/watch?v=4BnVeOUeZxc)
+- [Zero to IDE with LazyVim](https://www.youtube.com/watch?v=N93cTbtLCIM)
+- [Effective Neovim setup for web development towards 2024](https://github.com/craftzdog/dotfiles-public)
+- [Neovim Installation](https://www.lazyvim.org/installation)
+- [The perfect Neovim setup for Python](https://www.youtube.com/watch?v=4BnVeOUeZxc)
