@@ -1,5 +1,10 @@
 # my neovim config
 
+## Table of Contents
+
+1. [Installation](#Installation)
+2. [Setup](#setup)
+
 this repository is not just what i configured for my neovim setup learned after reviewing great `neovim` setup tutorial by [Elijah Manor](https://www.youtube.com/watch?v=N93cTbtLCIM&ab_channel=ElijahManor), [devaslife](https://www.youtube.com/watch?v=fFHlfbKVi30&ab_channel=devaslife), [theprimeagen](https://www.youtube.com/watch?v=fFHlfbKVi30&ab_channel=devaslife), [Dreams of Code](https://www.youtube.com/watch?v=4BnVeOUeZxc&ab_channel=DreamsofCode), but also a note to remember basic usage how to use power of `neovim` editor
 
 ## Installation
@@ -89,6 +94,7 @@ go to `~/.config/nvim/lua/config/lazy.nvim` line 12:
 ```
 
 and new nvim will look like this:
+
 ![neovim-color](./public/neovim-color.png)
 
 same config setting for colorscheme Dracula:
@@ -175,13 +181,13 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
     { import = "lazyvim.plugins.extras.lang.clangd" },
 ```
 
-#### hovering documentation
+### hovering documentation
 
 `shift` + `k`:
 
 ![neovim-hover](./public/neovim-hover.png)
 
-#### noice setup
+### noice setup
 
 ```lua
   {
@@ -238,7 +244,7 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
   },
 ```
 
-#### notification
+### notification
 
 ```lua
 {
@@ -249,7 +255,7 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 }
 ```
 
-#### rename
+### rename
 
 ![neovim-rename](./public/neovim-rename.png)
 
@@ -274,7 +280,7 @@ go to file `lua/config/ui.lua` and setup:
 
 [link](https://github.com/smjonas/inc-rename.nvim)
 
-#### filename
+### filename
 
 ![neovim-filename](./public/neovim-filename.png)
 
@@ -349,9 +355,12 @@ and all `todo` task will be shown
 ### search and replace
 
 usage: `leader` + `s` + `r`
-![[neovim-sr.png]]
+
+![neovim-sr](./public/neovim-sr.png)
 
 confirm it by pressing `leader` + `R`
+
+### surround.nvim
 
 ### issue: pyright, import [module] could not be resolved
 
@@ -381,6 +390,49 @@ include = ["movie", "moviereviews"]
 ```
 
 [reference](https://stackoverflow.com/questions/59108805/fixing-import-module-could-not-be-resolved-in-pyright)
+
+### nvim-surround
+
+nvim-surround operations:
+
+- `Add` - `ys`
+
+  add `iw` before desired character, `iw` by means is `inside word` in motion
+
+  add `.` that uses previous operation
+
+- `Change` - `cs`
+- `Delete` - `ds`
+
+usage:
+
+1. `add` `surround` with `sa`:
+
+`sa` + `iw` + {surrounding character}
+
+2. delete surrounding with `sd`:
+
+`sd` + {surrounding character}
+
+3. modify surrounding with `sr`:
+
+`sr`+ {selected surrounding} + {new surrounding}
+
+```
+return {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+}
+```
+
+[source](https://github.com/kylechui/nvim-surround)
+[link](https://www.youtube.com/watch?v=96FS45IaUgo&ab_channel=NerdSignals)
 
 ## Diff
 
