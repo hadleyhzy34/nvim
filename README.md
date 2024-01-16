@@ -393,30 +393,12 @@ include = ["movie", "moviereviews"]
 
 ### nvim-surround
 
-nvim-surround operations:
+`nvim-surround` operations:
 
-- `Add` - `ys`
-
-  add `iw` before desired character, `iw` by means is `inside word` in motion
-
-  add `.` that uses previous operation
-
-- `Change` - `cs`
-- `Delete` - `ds`
-
-usage:
-
-1. `add` `surround` with `sa`:
-
-`sa` + `iw` + {surrounding character}
-
-2. delete surrounding with `sd`:
-
-`sd` + {surrounding character}
-
-3. modify surrounding with `sr`:
-
-`sr`+ {selected surrounding} + {new surrounding}
+- `Add`: `ys` + `iw` + {character}, add `iw` before desired character, `iw` by means is inside word in motion
+- `Change`: `cs` + {surrounding character} + {new character}
+- `Delete`: `ds` + {surrounding character}
+- `Copy`: `.`, go to next word, and paste previous character to current word
 
 ```
 return {
@@ -431,8 +413,19 @@ return {
 }
 ```
 
+[Link: mini.surround](https://github.com/echasnovski/mini.surround)
 [source](https://github.com/kylechui/nvim-surround)
-[link](https://www.youtube.com/watch?v=96FS45IaUgo&ab_channel=NerdSignals)
+[Link: nvim-surround](https://www.youtube.com/watch?v=96FS45IaUgo&ab_channel=NerdSignals)
+
+### symbols outline
+
+usage:
+
+`leader` + `c` + `s`
+
+result:
+
+![picture](./public/neovim-media.png)
 
 ## Diff
 

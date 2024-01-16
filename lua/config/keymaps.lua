@@ -45,3 +45,8 @@ keymap.set("n", "<C-w><left>", "<C-w><")
 keymap.set("n", "<C-w><right>", "<C-w>>")
 keymap.set("n", "<C-w><up>", "<C-w>+")
 keymap.set("n", "<C-w><down>", "<C-w>-")
+
+-- nvim surround
+keymap.set("n", "sa", "ys")
+keymap.set("n", "sr", "cs")
+keymap.set("n", "sd", "ds")
