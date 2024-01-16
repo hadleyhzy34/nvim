@@ -44,8 +44,8 @@ sudo apt-get install ripgrep
 
 ### usage
 
-type `leader` + `leader`:
-![[public/neovim-fd.png]]
+type `leader` + `leader`:  
+![[./public/neovim-fd.png]]
 
 # setup
 
