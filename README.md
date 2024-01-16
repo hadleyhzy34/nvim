@@ -1,9 +1,4 @@
----
-tags:
-  - software-management
-  - neovim
-  - code-editor
----
+# My Neovim config
 
 # Installation
 
