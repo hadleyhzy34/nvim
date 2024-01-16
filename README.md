@@ -1,12 +1,10 @@
-# My Neovim config
+# my neovim config
 
-my own neovim setup after reviewing perfect neovim setup by [Elijah Manor](<https://www.youtube.com/watch?v=N93cTbtLCIM&ab_channel=ElijahManor), [devaslife](https://www.youtube.com/watch?v=fFHlfbKVi30&ab_channel=devaslife), [theprimeagen](https://www.youtube.com/watch?v=fFHlfbKVi30&ab_channel=devaslife), [Dreams of Code](https://www.youtube.com/watch?v=4BnVeOUeZxc&ab_channel=DreamsofCode)
+this repository is not just what i configured for my neovim setup learned after reviewing perfect `neovim` setup by [Elijah Manor](https://www.youtube.com/watch?v=N93cTbtLCIM&ab_channel=ElijahManor), [devaslife](https://www.youtube.com/watch?v=fFHlfbKVi30&ab_channel=devaslife), [theprimeagen](https://www.youtube.com/watch?v=fFHlfbKVi30&ab_channel=devaslife), [Dreams of Code](https://www.youtube.com/watch?v=4BnVeOUeZxc&ab_channel=DreamsofCode), but also a note to remember basic usage how to use power of `neovim editor
 
-# Installation
+## Installation
 
 ---
-
-[link](https://www.lazyvim.org/installation)
 
 - Clone the starter
   ```
@@ -22,40 +20,44 @@ my own neovim setup after reviewing perfect neovim setup by [Elijah Manor](<http
   ```
   Refer to the comments in the files on how to customize **LazyVim**.
 
-## install `fd` and `ripgrep`
+[link](https://www.lazyvim.org/installation)
+
+### install `fd` and `ripgrep`
 
 ---
 
-### mac OS
+#### mac OS
 
 ```
 brew install fd ripgrep
 ```
 
-### Linux
+#### Linux
 
 ```
 sudo apt install fd-find
 sudo apt-get install ripgrep
 ```
 
-### usage
+#### usage
 
-type `leader` + `leader`:  
+type `leader` + `leader`:
+
 ![fd-image](./public/neovim-fd.png)
 
-# setup
+## setup
 
 ---
 
-## setup colorscheme
+### setup colorscheme
 
 ---
 
-### default colorscheme
+#### default colorscheme
 
 `leader` + `u` + `C` to select colorscheme:
-![[neovim-colorscheme.png]]
+
+![neovim-colorscheme](./public/neovim-colorscheme.png)
 
 choose your own colorscheme:
 
@@ -95,23 +97,25 @@ go to `~/.config/nvim/lua/config/lazy.nvim` line 12:
 ```
 
 and new nvim will look like this:
-![[neovim-color.png]]
+![neovim-color](./public/neovim-color.png)
 
 same config setting for colorscheme Dracula:
-![[neovim-lazy.png]]
+
+![neovim-lazy](./public/neovim-lazy.png)
 
 [Link](https://linovox.com/the-best-color-schemes-for-neovim-nvim/)
 
-## key maps
+### key maps
 
 ---
 
-### increment and decrement number
+#### increment and decrement number
 
 move cursor to number, press `Ctrl` + `a` or `x` to increase or decrease number by 1:
-![[neovim-key-0.png]]
 
-## tab control
+![neovim-key-0](./public/neovim-key-0.png)
+
+### tab control
 
 ```lua
 -- New tab
@@ -121,25 +125,50 @@ keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
 ```
 
 type `t` + `e`:
-![[neovim-key-1.png]]
+
+![neovim-key-1](./public/neovim-key-1.png)
+
 switch between tabs by going to next tab or go back to previous tab:
+
 `<tab>` or `<s-tab>`
 
-## windows control
+### windows control
 
 ---
 
-### resize windows
+#### resize windows
 
-### move windows
+```
+-- Resize window
+keymap.set("n", "<C-w><left>", "<C-w><")
+keymap.set("n", "<C-w><right>", "<C-w>>")
+keymap.set("n", "<C-w><up>", "<C-w>+")
+keymap.set("n", "<C-w><down>", "<C-w>-")
+```
 
-### split windows
+#### move windows
 
-## undercurl
+```
+-- Move window
+keymap.set("n", "sh", "<C-w>h")
+keymap.set("n", "sk", "<C-w>k")
+keymap.set("n", "sj", "<C-w>j")
+keymap.set("n", "sl", "<C-w>l")
+```
+
+#### split windows
+
+```
+-- Split window
+keymap.set("n", "ss", ":split<Return>", opts)
+keymap.set("n", "sv", ":vsplit<Return>", opts)
+```
+
+### undercurl
 
 ---
 
-![[neovim-undercurl.png]]
+![neovim-undercurl](./public/neovim-undercurl.png)
 
 ```lua
 -- Undercurl
@@ -147,7 +176,7 @@ vim.cmd([[let &t_Cs = "\e[4:3m"]])
 vim.cmd([[let &t_Ce = "\e[4:0m"]])
 ```
 
-## installing extras
+### installing extras
 
 ---
 
@@ -162,14 +191,15 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
     { import = "lazyvim.plugins.extras.lang.clangd" },
 ```
 
-### hovering documentation
+#### hovering documentation
 
 ---
 
 `shift` + `k`:
-![[neovim-hover.png]]
 
-### noice setup
+![neovim-hover](./public/neovim-hover.png)
+
+#### noice setup
 
 ---
 
@@ -228,7 +258,7 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
   },
 ```
 
-### notification
+#### notification
 
 ---
 
@@ -241,11 +271,12 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 }
 ```
 
-### rename
+#### rename
 
 ---
 
-![[neovim-rename.png]]
+[neovim-rename](./public/neovim-rename.png)
+
 `IncRename` provides way renaming variables with preview features
 
 Note that this requires language server pre-installed.
@@ -253,7 +284,7 @@ Note that this requires language server pre-installed.
 usage:
 `leader` + `c` + `r`
 
-setup:
+go to file `lua/config/ui.lua` and setup:
 
 ```lua
   -- Incremental rename
@@ -267,11 +298,11 @@ setup:
 
 [link](https://github.com/smjonas/inc-rename.nvim)
 
-### filename
+#### filename
 
 ---
 
-![[neovim-filename.png]]
+![neovim-filename](./public/neovim-filename.png)
 
 add follow to file `ui.lua`:
 
@@ -309,7 +340,7 @@ add follow to file `ui.lua`:
   },
 ```
 
-## personal logo
+### personal logo
 
 ---
 
@@ -335,7 +366,7 @@ add follow to file `ui.lua`:
   },
 ```
 
-## TODO handling
+### TODO handling
 
 ---
 
@@ -345,7 +376,7 @@ a. first type uppercase `todo`:
 b. secondly search `todo` by typing `leader` + `s` + `t`:
 and all `todo` task will be shown
 
-## search and replace
+### search and replace
 
 ---
 
@@ -354,7 +385,7 @@ usage: `leader` + `s` + `r`
 
 confirm it by pressing `leader` + `R`
 
-## issue: pyright, import [module] could not be resolved
+### issue: pyright, import [module] could not be resolved
 
 ---
 
@@ -389,14 +420,24 @@ include = ["movie", "moviereviews"]
 
 ---
 
-[Reference](https://neovim.io/doc/user/diff.html)
+### horizontal split
 
-```python
+open a new window on the file {filename}.
+
+```
+:diffs {filename}
+```
+
+To make these commands use a vertical split:
+
+```
 :vert diffsplit main.c~
 :vert diffpatch /tmp/diff
 ```
 
-# Reference
+[Reference](https://neovim.io/doc/user/diff.html)
+
+## Reference
 
 ---
 
