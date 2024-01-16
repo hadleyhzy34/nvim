@@ -1,5 +1,7 @@
 # My Neovim config
 
+my own neovim setup after reviewing perfect neovim setup by [Elijah Manor](<https://www.youtube.com/watch?v=N93cTbtLCIM&ab_channel=ElijahManor), [devaslife](https://www.youtube.com/watch?v=fFHlfbKVi30&ab_channel=devaslife), [theprimeagen](https://www.youtube.com/watch?v=fFHlfbKVi30&ab_channel=devaslife), [Dreams of Code](https://www.youtube.com/watch?v=4BnVeOUeZxc&ab_channel=DreamsofCode)
+
 # Installation
 
 ---
