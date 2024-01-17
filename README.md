@@ -394,10 +394,12 @@ include = ["movie", "moviereviews"]
 
 `nvim-surround` operations:
 
-- `Add`: `ys` + `iw` + {character}, add `iw` before desired character, `iw` by means is inside word in motion
-- `Change`: `cs` + {surrounding character} + {new character}
-- `Delete`: `ds` + {surrounding character}
+- `Add`: `gsa` + `iw` + {character}, add `iw` before desired character, `iw` by means is inside word in motion
+- `Change`: `gsr` + {surrounding character} + {new character}
+- `Delete`: `gsd` + {surrounding character}
 - `Copy`: `.`, go to next word, and paste previous character to current word
+
+below `nvim-surround` not working properly in `visual` mode, now switch back to `surround.nvim`
 
 ```
 return {
