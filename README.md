@@ -15,7 +15,7 @@ this repository is not just what i configured for my neovim setup learned after 
    5. [find and search](#find-and-search)
    6. [file diff](#file-diff)
    7. [neotree](#neotree)
-   8. [terminal]
+   8. [terminal](#terminal)
 3. [Neovim Setup](#neovim-plugin-setup)
    1. [setup colorscheme](#setup-colorscheme)
    2. [extras](#installing-extras)
@@ -453,6 +453,7 @@ result:
 ![picture](public/neovim-media.png)
 
 ## issues
+
 ### issue: pyright, import [module] could not be resolved
 
 ```bash
