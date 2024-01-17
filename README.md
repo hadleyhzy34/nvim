@@ -6,8 +6,8 @@ this repository is not just what i configured for my neovim setup learned after 
 
 1. [Installation](#Installation)
 2. [Setup](#setup)
-   1.. [setup colorscheme](#setupcolorscheme)
-   2.. [setup new](#colorscheme)
+   1. [setup colorscheme](#setupcolorscheme)
+   2. [setup new](#colorscheme)
 
 ## Installation
 
