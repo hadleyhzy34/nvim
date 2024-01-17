@@ -5,7 +5,7 @@ this repository is not just what i configured for my neovim setup learned after 
 ## Table of Contents
 
 1. [Installation](#Installation)
-   1. [lazyvim installation](#lazyvim installation)
+   1. [LazyVim installation](<#LazyVim\ installation>)
    2. [fd ripgrep installation](#install `fd` and `ripgrep`)
 2. [Setup](#setup)
    1. [setup colorscheme](#setupcolorscheme)
@@ -13,7 +13,7 @@ this repository is not just what i configured for my neovim setup learned after 
 
 ## Installation
 
-### `lazyvim` installation
+### LazyVim installation
 
 - Clone the starter
   ```
