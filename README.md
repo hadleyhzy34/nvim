@@ -5,11 +5,28 @@ this repository is not just what i configured for my neovim setup learned after 
 ## Table of Contents
 
 1. [Installation](#Installation)
-   1. [LazyVim installation](<#LazyVim\ installation>)
-   2. [fd ripgrep installation](#install `fd` and `ripgrep`)
-2. [Setup](#setup)
-   1. [setup colorscheme](#setupcolorscheme)
-   2. [setup new](#colorscheme)
+   1. [LazyVim installation](#lazyvim-installation)
+   2. [fd and ripgrep installation](#install-fd-and-ripgrep)
+2. [Basic Keymaps](#key-map)
+   1. [number increament and decrement](#increment-and-decrement-number)
+   2. [tab control](#tab-control)
+   3. [windows control](#windows-control)
+   4. [undercurl](#undercurl)
+   5. [find and search](#find-and-search)
+   6. [file diff](#file-diff)
+   7. [neotree](#neotree)
+   8. [terminal]
+3. [Neovim Setup](#neovim-plugin-setup)
+   1. [setup colorscheme](#setup-colorscheme)
+   2. [extras](#installing-extras)
+   3. [IncRename](#rename)
+   4. [filename](#filename)
+   5. [personal logo](#personal-logo)
+   6. [TODO handling](#TODO-handling)
+   7. [search and replace](#search-and-place)
+   8. [nvim-surround](#nvim-surround)
+   9. [symbols outline](#symbols-outline)
+4. [issues](#issues)
 
 ## Installation
 
@@ -52,11 +69,107 @@ type `leader` + `leader`:
 
 ![fd-image](./public/neovim-fd.png)
 
-## setup
+## key maps
+
+### increment and decrement number
+
+move cursor to number, press `Ctrl` + `a` or `x` to increase or decrease number by 1:
+
+![neovim-key-0](./public/neovim-key-0.png)
+
+### tab control
+
+```lua
+-- New tab
+keymap.set("n", "te", ":tabedit")
+keymap.set("n", "<tab>", ":tabnext<Return>", opts)
+keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
+```
+
+type `t` + `e`:
+
+![neovim-key-1](public/neovim-key-1.png)
+
+switch between tabs by going to next tab or go back to previous tab:
+
+`<tab>` or `<s-tab>`
+
+### windows control
+
+#### resize windows
+
+```
+-- Resize window
+keymap.set("n", "<C-w><left>", "<C-w><")
+keymap.set("n", "<C-w><right>", "<C-w>>")
+keymap.set("n", "<C-w><up>", "<C-w>+")
+keymap.set("n", "<C-w><down>", "<C-w>-")
+```
+
+#### move windows
+
+```
+-- Move window
+keymap.set("n", "sh", "<C-w>h")
+keymap.set("n", "sk", "<C-w>k")
+keymap.set("n", "sj", "<C-w>j")
+keymap.set("n", "sl", "<C-w>l")
+```
+
+#### split windows
+
+```
+-- Split window
+keymap.set("n", "ss", ":split<Return>", opts)
+keymap.set("n", "sv", ":vsplit<Return>", opts)
+```
+
+### undercurl
+
+![neovim-undercurl](public/neovim-undercurl.png)
+
+```lua
+-- Undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])
+```
+
+### find and search
+
+find files inside current folder by typing `leader` + `leader`
+
+search variables inside current folder by typing `leader` + `s` + `g`
+
+### file diff
+
+open a new window on the file {filename}.
+
+```
+:diffs {filename}
+```
+
+To make these commands use a vertical split:
+
+```
+:vert diffsplit main.c~
+:vert diffpatch /tmp/diff
+```
+
+[reference](https://neovim.io/doc/user/diff.html)
+
+### neotree
+
+type `leader` + `e` to toggle neo-tree
+
+### terminal
+
+type `leader` + `f` + `t`
+
+## neovim plugins setup
 
 ### setup colorscheme
 
-#### default colorscheme
+to use default colorscheme
 
 `leader` + `u` + `C` to select colorscheme:
 
@@ -101,78 +214,13 @@ go to `~/.config/nvim/lua/config/lazy.nvim` line 12:
 
 and new nvim will look like this:
 
-![neovim-color](./public/neovim-color.png)
+![neovim-color](public/neovim-color.png)
 
 same config setting for colorscheme Dracula:
 
-![neovim-lazy](./public/neovim-lazy.png)
+![neovim-lazy](public/neovim-lazy.png)
 
 [Link](https://linovox.com/the-best-color-schemes-for-neovim-nvim/)
-
-### key maps
-
-#### increment and decrement number
-
-move cursor to number, press `Ctrl` + `a` or `x` to increase or decrease number by 1:
-
-![neovim-key-0](./public/neovim-key-0.png)
-
-### tab control
-
-```lua
--- New tab
-keymap.set("n", "te", ":tabedit")
-keymap.set("n", "<tab>", ":tabnext<Return>", opts)
-keymap.set("n", "<s-tab>", ":tabprev<Return>", opts)
-```
-
-type `t` + `e`:
-
-![neovim-key-1](./public/neovim-key-1.png)
-
-switch between tabs by going to next tab or go back to previous tab:
-
-`<tab>` or `<s-tab>`
-
-### windows control
-
-#### resize windows
-
-```
--- Resize window
-keymap.set("n", "<C-w><left>", "<C-w><")
-keymap.set("n", "<C-w><right>", "<C-w>>")
-keymap.set("n", "<C-w><up>", "<C-w>+")
-keymap.set("n", "<C-w><down>", "<C-w>-")
-```
-
-#### move windows
-
-```
--- Move window
-keymap.set("n", "sh", "<C-w>h")
-keymap.set("n", "sk", "<C-w>k")
-keymap.set("n", "sj", "<C-w>j")
-keymap.set("n", "sl", "<C-w>l")
-```
-
-#### split windows
-
-```
--- Split window
-keymap.set("n", "ss", ":split<Return>", opts)
-keymap.set("n", "sv", ":vsplit<Return>", opts)
-```
-
-### undercurl
-
-![neovim-undercurl](./public/neovim-undercurl.png)
-
-```lua
--- Undercurl
-vim.cmd([[let &t_Cs = "\e[4:3m"]])
-vim.cmd([[let &t_Ce = "\e[4:0m"]])
-```
 
 ### installing extras
 
@@ -191,9 +239,9 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 `shift` + `k`:
 
-![neovim-hover](./public/neovim-hover.png)
+![neovim-hover](public/neovim-hover.png)
 
-### noice setup
+#### noice setup
 
 ```lua
   {
@@ -250,7 +298,7 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
   },
 ```
 
-### notification
+#### notification
 
 ```lua
 {
@@ -263,7 +311,7 @@ vim.cmd([[let &t_Ce = "\e[4:0m"]])
 
 ### rename
 
-![neovim-rename](./public/neovim-rename.png)
+![neovim-rename](public/neovim-rename.png)
 
 `IncRename` provides way renaming variables with preview features
 
@@ -288,7 +336,7 @@ go to file `lua/config/ui.lua` and setup:
 
 ### filename
 
-![neovim-filename](./public/neovim-filename.png)
+![neovim-filename](public/neovim-filename.png)
 
 add follow to file `ui.lua`:
 
@@ -362,38 +410,9 @@ and all `todo` task will be shown
 
 usage: `leader` + `s` + `r`
 
-![neovim-sr](./public/neovim-sr.png)
+![neovim-sr](public/neovim-sr.png)
 
 confirm it by pressing `leader` + `R`
-
-### issue: pyright, import [module] could not be resolved
-
-```bash
-├── manage.py
-├── movie
-│   ├── admin.py
-│   ├── apps.py
-│   ├── __init__.py
-│   ├── models.py
-│   ├── tests.py
-│   └── views.py
-├── moviereviews
-│   ├── asgi.py
-│   ├── __init__.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
-└── pyproject.toml
-```
-
-create `pyproject.toml` would be:
-
-```python
-[tool.pyright]
-include = ["movie", "moviereviews"]
-```
-
-[reference](https://stackoverflow.com/questions/59108805/fixing-import-module-could-not-be-resolved-in-pyright)
 
 ### nvim-surround
 
@@ -431,26 +450,37 @@ usage:
 
 result:
 
-![picture](./public/neovim-media.png)
+![picture](public/neovim-media.png)
 
-## Diff
+## issues
+### issue: pyright, import [module] could not be resolved
 
-### horizontal split
-
-open a new window on the file {filename}.
-
+```bash
+├── manage.py
+├── movie
+│   ├── admin.py
+│   ├── apps.py
+│   ├── __init__.py
+│   ├── models.py
+│   ├── tests.py
+│   └── views.py
+├── moviereviews
+│   ├── asgi.py
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── pyproject.toml
 ```
-:diffs {filename}
+
+create `pyproject.toml` would be:
+
+```python
+[tool.pyright]
+include = ["movie", "moviereviews"]
 ```
 
-To make these commands use a vertical split:
-
-```
-:vert diffsplit main.c~
-:vert diffpatch /tmp/diff
-```
-
-[Reference](https://neovim.io/doc/user/diff.html)
+[reference](https://stackoverflow.com/questions/59108805/fixing-import-module-could-not-be-resolved-in-pyright)
 
 ## Reference
 
