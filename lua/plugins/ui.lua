@@ -97,7 +97,8 @@ return {
       options = {
         -- globalstatus = false,
         -- theme = "solarized_dark",
-        theme = "dracula",
+        -- theme = "dracula",
+        colorscheme = "tokyonight",
       },
     },
   },
