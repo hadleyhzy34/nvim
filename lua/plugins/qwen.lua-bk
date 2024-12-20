@@ -1,0 +1,35 @@
+return {
+  dir = vim.fn.stdpath("data") .. "/lazy/qwen2.5.nvim",
+  event = "VeryLazy",
+  keys = {
+    { "<leader>ac", "<cmd>QwenComplete<cr>", desc = "Complete Code" },
+    { "<leader>ae", "<cmd>QwenExplain<cr>", desc = "Explain Code" },
+    { "<leader>ar", "<cmd>QwenRefactor<cr>", desc = "Refactor Code" },
+    { "<leader>ad", "<cmd>QwenDoc<cr>", desc = "Generate Documentation" },
+    { "<leader>at", "<cmd>QwenTest<cr>", desc = "Generate Tests" },
+  },
+  config = function()
+    require("qwen").setup({
+      api = {
+        url = "http://localhost:11434/api/generate",
+        model = "qwen2.5-coder:14b",
+        context_length = 4096,
+      },
+      display = {
+        timeout = 300,
+        spinner = true,
+      },
+    })
+
+    -- Register which-key group
+    local wk = require("which-key")
+    wk.register({
+      ["<leader>a"] = { name = "+AI" },
+    })
+  end,
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "MunifTanjim/nui.nvim",
+    "folke/which-key.nvim",
+  },
+}
